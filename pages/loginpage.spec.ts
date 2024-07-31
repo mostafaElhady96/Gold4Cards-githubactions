@@ -6,6 +6,10 @@ export class Loginpage {
   readonly passwordfield :Locator;
   readonly submitbtninloginpage:Locator;
   readonly notificationicon:Locator;
+  readonly errormessagewrongemail:Locator;
+  readonly errormessagewronpassword:Locator;
+  readonly registerhere:Locator;
+  
 
   constructor(page: Page) {
     this.page = page;
@@ -13,17 +17,23 @@ export class Loginpage {
     this.passwordfield = page.getByPlaceholder('Type your password here');
     this.submitbtninloginpage=page.getByLabel('submit');
     this.notificationicon=page.locator('#Path_1127');
-  
+    this.errormessagewrongemail=page.getByText('No user found with that email!, Please check your email again.');
+    this.errormessagewronpassword=page.getByText('That password is incorrect, try again');
+    this.registerhere= page.getByText('New to gold4cards? Register here');
   }
 
-  async loginwithvalidcredentials(validemail,validpassword) {
-    await this.page.goto('https://gold4cards.com/auth/login');
-   // await this.emailfield.fill('mostafaelhadytester@gmail.com');
-    await this.emailfield.fill(validemail);
-   // await this.passwordfield.fill('Mostafa11223355@');
-    await this.passwordfield.fill(validpassword);
+  async loginWithEmailandPassword(email1,password1) {
+    await this.page.goto('https://stg.gold4cards.com/auth/login');
+
+    await this.emailfield.fill(email1);
+    await this.passwordfield.fill(password1);
+
     await this.submitbtninloginpage.click();
    
+  }
+
+  async gotologinpage(){
+    await this.page.goto('https://stg.gold4cards.com/auth/login')
   }
 
 
