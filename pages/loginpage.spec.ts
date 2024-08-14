@@ -32,6 +32,14 @@ export class Loginpage {
    
   }
 
+  async loginWithEmailandPasswordsuccessfulty() {
+    await this.page.goto('https://stg.gold4cards.com/auth/login');
+    await this.emailfield.fill('mostafaelhadytester+2@gmail.com');
+    await this.passwordfield.fill('Mostafa2024@');
+    await this.submitbtninloginpage.click();
+    await this.page.waitForURL('https://stg.gold4cards.com/') ;
+  }
+
   async gotologinpage(){
     await this.page.goto('https://stg.gold4cards.com/auth/login')
   }

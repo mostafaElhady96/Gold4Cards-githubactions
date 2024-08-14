@@ -1,7 +1,15 @@
 import { test, expect } from '@playwright/test';
 import { Loginpage } from '../pages/loginpage.spec';
-import { url } from 'inspector';
 import { Registerpage } from '../pages/Registerpage.spec';
+import { Homepage } from '../pages/homepage.spec';
+
+test('login with my email and test somethings', async ({ page }) => {  
+  const loginpage= new Loginpage(page);
+  const homepage = new Homepage(page);
+  await loginpage.loginWithEmailandPasswordsuccessfulty();
+  await homepage.gotoairolapage();
+
+});
 
 test('login with my email', async ({ page }) => {  
     const loginpage= new Loginpage(page);
@@ -30,8 +38,8 @@ test('login with my email', async ({ page }) => {
     await loginpage.gotologinpage();
     await loginpage.registerhere.click();
 
-    await expect ( await registerpage.privacyandpolicy).toBeVisible();
-    await registerpage.privacyandpolicy.check();
+    await expect ( await registerpage.termsandconditions).toBeVisible();
+    await registerpage.termsandconditions.check();
   });
 
 
@@ -41,9 +49,7 @@ test('login with my email', async ({ page }) => {
 
     await loginpage.gotologinpage();
     await loginpage.registerhere.click();
-
     await registerpage.alreadyamember.click();
-    
     await expect(loginpage.passwordfield).toBeVisible();
 
   
