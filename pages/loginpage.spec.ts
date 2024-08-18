@@ -37,7 +37,8 @@ export class Loginpage {
     await this.emailfield.fill('mostafaelhadytester+2@gmail.com');
     await this.passwordfield.fill('Mostafa2024@');
     await this.submitbtninloginpage.click();
-    await this.page.waitForURL('https://stg.gold4cards.com/') ;
+    //await this.page.waitForURL('https://stg.gold4cards.com/') ;
+    await this.page.waitForSelector('text=Offers');
   }
 
   async gotologinpage(){

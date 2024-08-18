@@ -3,11 +3,12 @@ import { expect, type Locator, type Page } from '@playwright/test';
 export class PaymentPage {
   readonly page: Page;
   readonly fawrypaymentgetway:Locator;
+  readonly couponplaceholder:Locator;
   
   constructor(page: Page) {
     this.page = page;
     this.fawrypaymentgetway = page.getByLabel('Fawry');
-  
+    this.couponplaceholder=page.getByPlaceholder('Type your Coupon here');
   }
 
   async chooseFawryForPayment() {
@@ -30,6 +31,7 @@ export class PaymentPage {
     await this.page.getByLabel('Gold Wallet').click();
     await this.page.getByLabel('Pay now').click();
     await this.page.getByLabel('Proceed with payment').click();
+    await this.page.getByLabel('order page link').click();
   
     }
 

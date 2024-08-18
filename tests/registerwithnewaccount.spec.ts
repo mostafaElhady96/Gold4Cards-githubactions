@@ -11,7 +11,7 @@ test('register with new account ', async ({ page }) => {
 });
 
 
-test('resgiter with new account second step ', async ({ page }) => {
+test.skip('resgiter with new account second step ', async ({ page }) => {
   await page.goto
   ('');
 

@@ -5,14 +5,14 @@ import { Homepage } from '../pages/homepage.spec';
 import { PaymentPage } from '../pages/payment.spec';
 import { Productpage } from '../pages/productpage.spec';
 
-test('buy range product with fawry ', async ({ page }) => {
+test('buy voucher product with fawry ', async ({ page }) => {
   const loginpage= new Loginpage(page);
   const homepage = new Homepage(page);
   await loginpage.loginWithEmailandPasswordsuccessfulty();
   await homepage.gotoairolapage();
 
-  await page.getByTitle('range test automation').click();
-  await page.getByPlaceholder('Enter the card value').fill('1');
+  await page.getByTitle('voucher test automation').click();
+  
   
   const productpage=new Productpage(page);
   await productpage.addtocartWithcheckout();
@@ -21,19 +21,19 @@ test('buy range product with fawry ', async ({ page }) => {
   await paymentpage.chooseFawryForPayment();
 
   await paymentpage.payusingFawry();
-  
 });
 
 
-test('buy range product with wallet ', async ({ page }) => {
+test('buy voucher product with wallet ', async ({ page }) => {
   const loginpage= new Loginpage(page);
   const homepage = new Homepage(page);
   await loginpage.loginWithEmailandPasswordsuccessfulty();
   await homepage.gotoairolapage();
 
-  await page.getByTitle('range test automation').click();
-  await page.getByPlaceholder('Enter the card value').fill('2');
+  await page.getByTitle('voucher test automation').click();
+
   
+
   const productpage=new Productpage(page);
   await productpage.addtocartWithcheckout();
 
@@ -42,7 +42,7 @@ test('buy range product with wallet ', async ({ page }) => {
 });
 
 
-test('buy range product with geidea', async ({ page }) => {
+test('buy voucher product with geidea', async ({ page }) => {
   const loginpage = new Loginpage(page);
   const homepage = new Homepage(page);
 
@@ -50,8 +50,7 @@ test('buy range product with geidea', async ({ page }) => {
   await homepage.gotoairolapage();
 
 
-  await page.getByTitle('range test automation').click();
-  await page.getByPlaceholder('Enter the card value').fill('2');
+ await page.getByTitle('voucher test automation').click();
   
   const productpage = new Productpage(page);
   await productpage.addtocartWithcheckout();

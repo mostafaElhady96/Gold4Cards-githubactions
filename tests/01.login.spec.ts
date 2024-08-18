@@ -7,7 +7,11 @@ test('login with my email and test somethings', async ({ page }) => {
   const loginpage= new Loginpage(page);
   const homepage = new Homepage(page);
   await loginpage.loginWithEmailandPasswordsuccessfulty();
-  await homepage.gotoairolapage();
+
+  await page.waitForSelector('text=Offers');
+
+  
+ await homepage.changecurrencytoAED();
 
 });
 
