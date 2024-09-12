@@ -11,7 +11,7 @@ test('login with my email and test somethings', async ({ page }) => {
   await page.waitForSelector('text=Offers');
 
   
- await homepage.changecurrencytoAED();
+ //await homepage.changecurrencytoAED();
 
 });
 

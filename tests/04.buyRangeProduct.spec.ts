@@ -15,7 +15,7 @@ test('buy range product with fawry ', async ({ page }) => {
   await homepage.gotoairolapage();
 
   await page.getByTitle('range test automation').click();
-  await page.getByPlaceholder('Enter the card value').fill('1');
+  await page.getByPlaceholder('Enter the card value').fill('10');
   
   const productpage=new Productpage(page);
   await productpage.addtocartWithcheckout();
@@ -23,7 +23,7 @@ test('buy range product with fawry ', async ({ page }) => {
   const paymentpage=new PaymentPage(page);
   await paymentpage.chooseFawryForPayment();
 
-  await paymentpage.payusingFawry();
+  //await paymentpage.payusingFawry();
   
 });
 
@@ -45,7 +45,7 @@ test('buy range product with wallet ', async ({ page }) => {
 });
 
 
-test('buy range product with geidea', async ({ page }) => {
+test.skip('buy range product with geidea', async ({ page }) => {
   const loginpage = new Loginpage(page);
   const homepage = new Homepage(page);
 

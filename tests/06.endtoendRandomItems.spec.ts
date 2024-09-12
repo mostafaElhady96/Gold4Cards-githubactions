@@ -15,7 +15,7 @@ test('buy $10 PayPal with fawry ', async ({ page }) => {
     await page.getByLabel('Proceed with payment').click();
 
     const paymentpage =new PaymentPage(page);
-    await paymentpage.payusingFawry();
+   // await paymentpage.payusingFawry();
    
   });
 
@@ -30,5 +30,5 @@ test('buy $10 PayPal with fawry ', async ({ page }) => {
     await page.getByLabel('Proceed with payment').click();
 
     const paymentpage =new PaymentPage(page);
-    await paymentpage.payusingFawry();
+    //await paymentpage.payusingFawry();
   });

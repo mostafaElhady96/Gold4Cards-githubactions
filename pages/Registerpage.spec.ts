@@ -27,8 +27,8 @@ export class Registerpage {
     await this.page.getByPlaceholder('Type your password here').type('Mostafa2024@');
     await this.page.getByPlaceholder('Type your confirm password').type('Mostafa2024@');
     
-    await this.page.getByPlaceholder('country').type('United Kingdom');
-    await this.page.getByText('United Kingdom').click();
+    await this.page.getByPlaceholder('country').type('egypt');
+    await this.page.getByText('egypt').click();
     await this.page.getByPlaceholder('Pick one').click();
     await this.page.getByRole('option', { name: 'EUR' }).click();
     await this.page.getByPlaceholder('Type your date here').type('09151996');

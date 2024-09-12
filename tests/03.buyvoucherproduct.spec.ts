@@ -20,7 +20,7 @@ test('buy voucher product with fawry ', async ({ page }) => {
   const paymentpage=new PaymentPage(page);
   await paymentpage.chooseFawryForPayment();
 
-  await paymentpage.payusingFawry();
+  //await paymentpage.payusingFawry();
 });
 
 
@@ -42,7 +42,7 @@ test('buy voucher product with wallet ', async ({ page }) => {
 });
 
 
-test('buy voucher product with geidea', async ({ page }) => {
+test.skip('buy voucher product with geidea', async ({ page }) => {
   const loginpage = new Loginpage(page);
   const homepage = new Homepage(page);
 

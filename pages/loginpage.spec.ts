@@ -18,7 +18,8 @@ export class Loginpage {
     this.submitbtninloginpage=page.getByLabel('submit');
     this.notificationicon=page.locator('#Path_1127');
     this.errormessagewrongemail=page.getByText('No user found with that email!, Please check your email again.');
-    this.errormessagewronpassword=page.getByText('That password is incorrect, try again');
+   
+    this.errormessagewronpassword=page.getByText('Invalid Email or Password!, Please try again.');
     this.registerhere= page.getByText('New to gold4cards? Register here');
   }
 
@@ -34,12 +35,22 @@ export class Loginpage {
 
   async loginWithEmailandPasswordsuccessfulty() {
     await this.page.goto('https://stg.gold4cards.com/auth/login');
-    await this.emailfield.fill('mostafaelhadytester+2@gmail.com');
+    await this.emailfield.fill('mostafaelhadytester+7@gmail.com');
+    await this.passwordfield.fill('Mostafa2024@');
+    await this.submitbtninloginpage.click();
+    await this.page.waitForURL('https://stg.gold4cards.com/') ;
+    await this.page.waitForSelector('text=Offers');
+  }
+
+  async loginwithtestemail() {
+    await this.page.goto('https://stg.gold4cards.com/auth/login');
+    await this.emailfield.fill('mostafaelhadytester+6@gmail.com');
     await this.passwordfield.fill('Mostafa2024@');
     await this.submitbtninloginpage.click();
     //await this.page.waitForURL('https://stg.gold4cards.com/') ;
     await this.page.waitForSelector('text=Offers');
   }
+
 
   async gotologinpage(){
     await this.page.goto('https://stg.gold4cards.com/auth/login')

@@ -18,14 +18,14 @@ test('buy range product with coupon discount ', async ({ page }) => {
   await page.waitForSelector('text=Offers');
   await homepage.gotoairolapage();
 
-  await page.getByTitle('range test automation').click();
-  await page.getByPlaceholder('Enter the card value').fill('50');
+  await page.getByTitle('voucher test automation').click();
+ 
   
   const productpage=new Productpage(page);
   await productpage.addtocartWithcheckout();
  
   const paymentpage = new PaymentPage(page);
-  await paymentpage.couponplaceholder.type('TAF2');
+  await paymentpage.couponplaceholder.type('TAP40M100');
   await paymentpage.couponplaceholder.press('Enter');
 
 });
