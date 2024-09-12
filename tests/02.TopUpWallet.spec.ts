@@ -20,8 +20,9 @@ test('top up wallet with 1000 dollar  usuing fawry ', async ({ page }) => {
   await page.getByLabel('Top up').click();
   // to prevent failure of test case 
   await walletpage.addvalueText.isVisible();
+  await page.getByRole('spinbutton').click();
   await page.getByRole('spinbutton').type('1000');
-  await page.getByRole('button', { name: 'Top up' }).click();
+  await page.getByRole('spinbutton').press('Enter');
   await page.getByText('Fawry').click();
   await page.getByLabel('Continue').click();
  
@@ -45,11 +46,11 @@ test('top up wallet with 1000 SAR  usuing fawry ', async ({ page }) => {
   await page.getByLabel('Top up').click();
   // to prevent failure of test case 
   await walletpage.addvalueText.isVisible();
+  await page.getByRole('spinbutton').click();
   await page.getByRole('spinbutton').type('1000');
-  await page.getByRole('button', { name: 'Top up' }).dblclick();
+  await page.getByRole('spinbutton').press('Enter');
   await page.getByText('Fawry').click();
   await page.getByLabel('Continue').click();
- 
   //const paymentpage =new PaymentPage(page);
   //await paymentpage.payusingFawry();
 });
@@ -69,8 +70,9 @@ test('top up wallet with 1000 EGP  usuing fawry ', async ({ page }) => {
   await page.getByLabel('Top up').click();
   // to prevent failure of test case 
   await walletpage.addvalueText.isVisible();
+  await page.getByRole('spinbutton').click();
   await page.getByRole('spinbutton').type('1000');
-  await page.getByRole('button', { name: 'Top up' }).dblclick();
+  await page.getByRole('spinbutton').press('Enter');
   await page.getByText('Fawry').click();
   await page.getByLabel('Continue').click();
  
